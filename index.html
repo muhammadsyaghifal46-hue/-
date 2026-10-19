@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>النعت وأنواعه - مَادَّةٌ وَلُعْبَةٌ تَعْلِيمِيَّةٌ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .font-arabic {
+            font-family: 'Amiri', serif;
+        }
+        .btn-shadow {
+            box-shadow: 0 4px 0 #0284c7;
+        }
+        .btn-shadow:active {
+            box-shadow: 0 0 0 #0284c7;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<body class="bg-slate-100 min-h-screen text-slate-800 flex flex-col">
+
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-md border-b border-slate-200 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-sky-600 text-white p-2 rounded-xl text-xl font-bold">
+                    📚
+                </div>
+                <div>
+                    <h1 class="text-xl font-extrabold text-sky-900 font-arabic">النَّعْتُ وَأَنْوَاعُهُ</h1>
+                    <p class="text-xs text-slate-500">Materi & Game Edukasi Interaktif Bahasa Arab</p>
+                </div>
+            </div>
+
+            <div class="flex bg-slate-100 p-1 rounded-xl border border-slate-200">
+                <button id="btn-tab-materi" onclick="switchTab('materi')" class="px-5 py-2 rounded-lg text-sm font-bold transition flex items-center gap-2 bg-sky-600 text-white shadow-sm">
+                    📖 1. Materi Pembelajaran
+                </button>
+                <button id="btn-tab-game" onclick="switchTab('game')" class="px-5 py-2 rounded-lg text-sm font-bold transition flex items-center gap-2 text-slate-600 hover:text-slate-900">
+                    🎮 2. Permainan & Roda Acak
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-7xl mx-auto px-4 py-6 flex-grow w-full">
+
+        <!-- TAB 1: MATERI PEMBELAJARAN -->
+        <div id="tab-materi" class="block space-y-6">
+            <!-- Header Banner -->
+            <div class="bg-gradient-to-r from-sky-600 to-indigo-700 rounded-3xl p-6 md:p-8 text-white shadow-xl relative overflow-hidden">
+                <div class="relative z-10 max-w-3xl">
+                    <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Materi Utama</span>
+                    <h2 class="text-3xl md:text-5xl font-black font-arabic mt-3 mb-2 leading-tight">النَّعْتُ وَأَنْوَاعُهُ</h2>
+                    <p class="text-sky-100 text-lg md:text-xl font-arabic">
+                        هُوَ تَابِعٌ يُذْكَرُ بَعْدَ اسْمٍ (مَنْعُوتٍ - مَوْصُوفٍ) لِبَيَانِ صِفَةٍ مِنْ صِفَاتِهِ.
+                    </p>
+                </div>
+                <div class="absolute -bottom-10 -left-10 text-white/10 text-9xl font-black font-arabic pointer-events-none">
+                    النَّعْتُ
+                </div>
+            </div>
+
+            <!-- 3 Jenis Na'at Cards -->
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- 1. Na'at Mufrad -->
+                <div class="bg-white rounded-2xl shadow-md border border-slate-200 p-6 flex flex-col justify-between hover:shadow-lg transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full">النوع الأول</span>
+                            <span class="text-2xl">🔹</span>
+                        </div>
+                        <h3 class="text-2xl font-bold font-arabic text-emerald-900 mb-2">النَّعْتُ الْمُفْرَدُ</h3>
+                        <p class="text-slate-600 text-sm font-arabic mb-4 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                            هُوَ مَا لَيْسَ جُمْلَةً وَلَا شِبْهَ جُمْلَةٍ.
+                        </p>
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">أَمْثِلَةٌ (Contoh):</h4>
+                        <ul class="space-y-2 font-arabic text-lg">
+                            <li class="bg-emerald-50/50 p-2.5 rounded-lg border border-emerald-100 text-emerald-950">• أَكَلْتُ الطَّعَامَ <span class="font-bold text-emerald-600 underline">اللَّذِيذَ</span></li>
+                            <li class="bg-emerald-50/50 p-2.5 rounded-lg border border-emerald-100 text-emerald-950">• رَأَيْتُ رَجُلًا <span class="font-bold text-emerald-600 underline">قَوِيًّا</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2. Na'at Jumlah -->
+                <div class="bg-white rounded-2xl shadow-md border border-slate-200 p-6 flex flex-col justify-between hover:shadow-lg transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-sky-100 text-sky-800 text-xs font-bold px-3 py-1 rounded-full">النوع الثاني</span>
+                            <span class="text-2xl">💬</span>
+                        </div>
+                        <h3 class="text-2xl font-bold font-arabic text-sky-900 mb-2">النَّعْتُ الْجُمْلَةُ</h3>
+                        <p class="text-slate-600 text-sm font-arabic mb-4 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                            يَكُونُ النَّعْتُ جُمْلَةً اسْمِيَّةً أَوْ فِعْلِيَّةً.
+                        </p>
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">أَمْثِلَةٌ (Contoh):</h4>
+                        <div class="space-y-2 font-arabic text-md">
+                            <div class="bg-sky-50/50 p-2.5 rounded-lg border border-sky-100">
+                                <span class="text-xs font-bold text-sky-700 block mb-1">(أ) جُمْلَةٌ اسْمِيَّةٌ:</span>
+                                <div>• رَأَيْتُ وَلَدًا <span class="font-bold text-sky-600 underline">وَجْهُهُ جَمِيلٌ</span></div>
+                                <div>• زَرَعْتُ وُرُودًا <span class="font-bold text-sky-600 underline">أَلْوَانُهَا جَمِيلَةٌ</span></div>
+                            </div>
+                            <div class="bg-sky-50/50 p-2.5 rounded-lg border border-sky-100">
+                                <span class="text-xs font-bold text-sky-700 block mb-1">(ب) جُمْلَةٌ فِعْلِيَّةٌ:</span>
+                                <div>• رَأَيْتُ أُسْتَاذًا <span class="font-bold text-sky-600 underline">يَكْتُبُ</span></div>
+                                <div>• رَأَيْتُ طَالِبًا <span class="font-bold text-sky-600 underline">يَضْحَكُ</span></div>
+                                <div>• جَاءَ أُسْتَاذٌ <span class="font-bold text-sky-600 underline">يَمْشِي</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Na'at Syibhul Jumlah -->
+                <div class="bg-white rounded-2xl shadow-md border border-slate-200 p-6 flex flex-col justify-between hover:shadow-lg transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full">النوع الثالث</span>
+                            <span class="text-2xl">🔗</span>
+                        </div>
+                        <h3 class="text-2xl font-bold font-arabic text-purple-900 mb-2">النَّعْتُ شِبْهُ الْجُمْلَةِ</h3>
+                        <p class="text-slate-600 text-sm font-arabic mb-4 bg-slate-50 p-3 rounded-lg border border-slate-100">
+                            يَكُونُ شِبْهَ جُمْلَةٍ جَارٌّ وَمَجْرُورٌ أَوْ ظَرْفًا.
+                        </p>
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">أَمْثِلَةٌ (Contoh):</h4>
+                        <div class="space-y-2 font-arabic text-md">
+                            <div class="bg-purple-50/50 p-2.5 rounded-lg border border-purple-100">
+                                <span class="text-xs font-bold text-purple-700 block mb-1">(أ) جَارٌّ وَمَجْرُورٌ:</span>
+                                <div>• رَأَيْتُ وَلَدًا <span class="font-bold text-purple-600 underline">فِي الْمَسْجِدِ</span></div>
+                                <div>• رَأَيْتُ رَجُلًا <span class="font-bold text-purple-600 underline">فِي الْغَابَةِ</span></div>
+                            </div>
+                            <div class="bg-purple-50/50 p-2.5 rounded-lg border border-purple-100">
+                                <span class="text-xs font-bold text-purple-700 block mb-1">(ب) ظَرْفٌ:</span>
+                                <div>• رَأَيْتُ عُصْفُورًا <span class="font-bold text-purple-600 underline">فَوْقَ الشَّجَرَةِ</span></div>
+                                <div>• قَابَلْتُ طَالِبًا <span class="font-bold text-purple-600 underline">أَمَامَ الْمَرْكَزِ</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kaidah Table -->
+            <div class="bg-amber-50 rounded-2xl p-6 border border-amber-200 shadow-sm">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="text-2xl">⚙️</span>
+                    <h3 class="text-xl font-bold font-arabic text-amber-900">قَاعِدَةٌ: النَّعْتُ يَتْبَعُ الْمَنْعُوتَ فِي:</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center font-arabic">
+                    <div class="bg-white p-4 rounded-xl border border-amber-200 shadow-sm">
+                        <span class="text-xs font-sans text-amber-600 font-bold block mb-1">Kejelasan</span>
+                        <span class="text-lg font-bold text-amber-950">التَّعْرِيفِ وَالتَّنْكِيرِ</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-amber-200 shadow-sm">
+                        <span class="text-xs font-sans text-amber-600 font-bold block mb-1">Jumlah</span>
+                        <span class="text-lg font-bold text-amber-950">الْإِفْرَادِ وَالتَّثْنِيَةِ وَالْجَمْعِ</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-amber-200 shadow-sm">
+                        <span class="text-xs font-sans text-amber-600 font-bold block mb-1">Gender</span>
+                        <span class="text-lg font-bold text-amber-950">التَّذْكِيرِ وَالتَّأْنِيثِ</span>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-amber-200 shadow-sm">
+                        <span class="text-xs font-sans text-amber-600 font-bold block mb-1">Harakat / I'rab</span>
+                        <span class="text-lg font-bold text-amber-950">الْإِعْرَابِ</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ready for game button -->
+            <div class="text-center py-4">
+                <button onclick="switchTab('game')" class="bg-sky-600 hover:bg-sky-700 text-white font-bold text-lg px-8 py-3 rounded-2xl shadow-lg hover:shadow-xl transition transform active:scale-95">
+                    🚀 Lanjut ke Permainan & Roda Acak
+                </button>
+            </div>
+        </div>
+
+        <!-- TAB 2: GAME & RODA ACAK -->
+        <div id="tab-game" class="hidden space-y-6">
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left Side: Spinner Wheel (4 cols) -->
+                <div class="lg:col-span-5 bg-white rounded-3xl p-6 shadow-md border border-slate-200 flex flex-col items-center">
+                    <div class="w-full flex items-center justify-between mb-4">
+                        <h3 class="text-lg font-bold text-slate-800 flex items-center gap-2 font-arabic">
+                            🎡 <span>عَجَلَةُ الأَسْمَاءِ</span>
+                        </h3>
+                        <button onclick="openNameModal()" class="text-xs bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold px-3 py-1.5 rounded-lg border border-slate-300 transition font-arabic">
+                            ✏️ تَعْدِيلُ الأَسْمَاءِ
+                        </button>
+                    </div>
+
+                    <!-- Canvas Wheel Container -->
+                    <div class="relative my-4">
+                        <!-- Pointer Arrow -->
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-20 w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-t-[25px] border-t-red-500 drop-shadow-md"></div>
+                        
+                        <canvas id="wheelCanvas" width="320" height="320" class="max-w-full drop-shadow-md"></canvas>
+                        
+                        <button id="spinBtn" onclick="spinWheel()" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-amber-400 hover:bg-amber-300 text-amber-950 font-black rounded-full border-4 border-white shadow-lg flex items-center justify-center text-sm font-arabic active:scale-90 transition z-10">
+                            أَدِرْ
+                        </button>
+                    </div>
+
+                    <div class="bg-amber-50 text-amber-900 border border-amber-200 text-xs p-3 rounded-xl w-full text-center mt-2 font-arabic">
+                        👈 أَدِرِ العَجَلَةَ لِاخْتِيَارِ الطَّالِبِ الَّذِي سَيُجِيبُ!
+                    </div>
+                </div>
+
+                <!-- Right Side: Quiz Interactive (7 cols) -->
+                <div class="lg:col-span-7 bg-white rounded-3xl p-6 shadow-md border border-slate-200 flex flex-col justify-between min-h-[500px]">
+                    <div>
+                        <!-- Quiz Header -->
+                        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-4">
+                            <div class="flex items-center gap-2">
+                                <span class="bg-sky-100 text-sky-800 font-bold px-3 py-1 rounded-full text-xs font-arabic">
+                                    السُّؤَالُ <span id="current-q-num">1</span> مِنْ 20
+                                </span>
+                            </div>
+                            <!-- Score Display -->
+                            <div class="text-sm font-bold text-slate-600">
+                                النقاط: <span id="score-val" class="text-emerald-600 text-base">0</span>
+                            </div>
+                        </div>
+
+                        <!-- Question Numbers Bar -->
+                        <div class="flex flex-wrap gap-1.5 mb-6 justify-center" id="q-dots">
+                            <!-- JS Will generate dots 1-20 -->
+                        </div>
+
+                        <!-- Question Text Container -->
+                        <div class="bg-sky-50/60 border border-sky-100 rounded-2xl p-6 mb-6 text-center">
+                            <h3 id="question-text" class="text-2xl md:text-3xl font-bold font-arabic text-slate-900 leading-relaxed">
+                                Loading...
+                            </h3>
+                        </div>
+
+                        <!-- Options Container ABC -->
+                        <div id="options-container" class="space-y-3 font-arabic text-lg">
+                            <!-- JS Generated Options -->
+                        </div>
+
+                        <!-- Explanation Box (Hidden initially) -->
+                        <div id="explanation-box" class="hidden mt-4 p-4 rounded-xl text-sm border font-arabic transition-all">
+                            <!-- Explanation text -->
+                        </div>
+                    </div>
+
+                    <!-- Bottom Nav Controls -->
+                    <div class="flex items-center justify-between border-t border-slate-100 pt-4 mt-6">
+                        <button id="prev-btn" onclick="prevQuestion()" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition disabled:opacity-40">
+                            السُّؤَالُ السَّابِقُ ⬅️
+                        </button>
+                        <button id="next-btn" onclick="nextQuestion()" class="px-5 py-2 bg-sky-600 hover:bg-sky-700 text-white text-xs font-bold rounded-xl transition">
+                            ➡️ السُّؤَالُ التَّالِي
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modal Winner / Selected Student -->
+    <div id="winnerModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl p-6 md:p-8 max-w-sm w-full text-center shadow-2xl transform transition-all border-4 border-amber-400">
+            <div class="w-20 h-20 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl">
+                🏆
+            </div>
+            <p class="text-xs font-bold text-amber-600 uppercase tracking-wider mb-1 font-arabic">الطَّالِبُ المُمَيَّزُ</p>
+            <h3 id="winnerName" class="text-3xl font-black text-slate-900 mb-2 font-arabic">Salsa</h3>
+            <p class="text-slate-500 text-sm mb-6 font-arabic">تَفَضَّلْ بِالإِجَابَةِ عَنِ السُّؤَالِ المطروح! 🎉</p>
+            
+            <div class="flex flex-col gap-2">
+                <button onclick="closeWinnerModal()" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-2.5 rounded-xl transition text-sm font-arabic">
+                    مُتَابَعَةٌ (Lanjutkan)
+                </button>
+                <button onclick="removeSelectedStudent()" class="w-full bg-rose-100 hover:bg-rose-200 text-rose-700 font-bold py-2 rounded-xl transition text-xs font-arabic border border-rose-300">
+                    🗑️ حَذْفُ الاسْمِ (Hapus dari Roda)
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Edit Names -->
+    <div id="nameModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-3xl p-6 max-w-md w-full shadow-2xl font-arabic">
+            <h3 class="text-xl font-bold text-slate-900 mb-2">تَعْدِيلُ أَسْمَاءِ الطُّلَّابِ</h3>
+            <p class="text-xs text-slate-500 mb-4">أَدْخِلْ اسْمَ كُلِّ طَالِبٍ فِي سَطْرٍ مُسْتَقِلٍّ:</p>
+            
+            <textarea id="namesInput" rows="7" class="w-full border border-slate-300 rounded-xl p-3 text-slate-800 text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none mb-4 font-sans"></textarea>
+            
+            <div class="flex justify-end gap-2">
+                <button onclick="closeNameModal()" class="px-4 py-2 bg-slate-100 text-slate-600 text-xs font-bold rounded-xl">إِلْغَاءٌ</button>
+                <button onclick="saveNames()" class="px-5 py-2 bg-sky-600 text-white text-xs font-bold rounded-xl">حَفِظَ</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ------------------ DATA SOAL (20 SOAL) ------------------
+        const questions = [
+            {
+                q: "١. مَا هُوَ النَّعْتُ؟",
+                options: [
+                    "أ. تَابِعٌ يُذْكَرُ بَعْدَ اسْمٍ لِبَيَانِ صِفَةٍ مِنْ صِفَاتِهِ",
+                    "ب. فِعْلٌ يَدُلُّ عَلَى حَدَثٍ",
+                 
